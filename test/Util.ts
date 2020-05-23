@@ -1,5 +1,5 @@
 import ava from 'ava';
-import { BitField, BitFieldObject } from '../dist';
+import { BitField, BitFieldObject } from '../src';
 
 type TestResolvable = keyof typeof TestBits.FLAGS | number | BitFieldObject | ((keyof typeof TestBits.FLAGS) | number | BitFieldObject)[]
 
