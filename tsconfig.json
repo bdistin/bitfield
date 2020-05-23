@@ -19,8 +19,8 @@
 		"examples",
 		"scripts"
 	],
-    "include": [
-	"./src/**/*",
-	"./test/**/*"
-    ]
+	"include": [
+		"./src/**/*",
+		"./test/**/*"
+    	]
 }
