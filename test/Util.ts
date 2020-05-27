@@ -1,16 +1,22 @@
 import ava from 'ava';
 import { BitField, BitFieldObject } from '../src';
 
-type TestResolvable = keyof typeof TestBits.FLAGS | number | BitFieldObject | ((keyof typeof TestBits.FLAGS) | number | BitFieldObject)[]
+const enum TestBitFlags {
+	A = 'A',
+	B = 'B',
+	C = 'C'
+}
+
+type TestResolvable = TestBitFlags | number | BitFieldObject | (TestBitFlags | number | BitFieldObject)[]
 
 /* eslint-disable no-bitwise, id-length */
 
 class TestBits extends BitField<TestResolvable> {
 
 	static FLAGS = {
-		A: 1 << 0,
-		B: 1 << 1,
-		C: 1 << 2
+		[TestBitFlags.A]: 1 << 0,
+		[TestBitFlags.B]: 1 << 1,
+		[TestBitFlags.C]: 1 << 2
 	} as const;
 
 }
@@ -44,19 +50,19 @@ ava('has not', (test): void => {
 ava('has by string', (test): void => {
 	const testBits = new TestBits(1);
 
-	test.true(testBits.has('A'));
+	test.true(testBits.has(TestBitFlags.A));
 });
 
 ava('has multiple', (test): void => {
 	const testBits = new TestBits(3);
 
-	test.true(testBits.has(['A', 'B']));
+	test.true(testBits.has([TestBitFlags.A, TestBitFlags.B]));
 });
 
 ava('missing', (test): void => {
 	const testBits = new TestBits(1);
 
-	test.deepEqual(testBits.missing(TestBits.ALL), ['B', 'C']);
+	test.deepEqual(testBits.missing(TestBits.ALL), [TestBitFlags.B, TestBitFlags.C]);
 });
 
 ava('freeze', (test): void => {
@@ -70,7 +76,7 @@ ava('freeze', (test): void => {
 ava('add', (test): void => {
 	const testBits = new TestBits(1);
 
-	testBits.add('B');
+	testBits.add(TestBitFlags.B);
 
 	test.is(testBits.bitfield, 3);
 });
@@ -79,7 +85,7 @@ ava('frozen add', (test): void => {
 	test.plan(2);
 
 	const testBits = new TestBits(1).freeze();
-	const otherBits = testBits.add('B');
+	const otherBits = testBits.add(TestBitFlags.B);
 
 	test.is(testBits.bitfield, 1);
 	test.is(otherBits.bitfield, 3);
@@ -88,7 +94,7 @@ ava('frozen add', (test): void => {
 ava('remove', (test): void => {
 	const testBits = new TestBits(3);
 
-	testBits.remove('B');
+	testBits.remove(TestBitFlags.B);
 
 	test.is(testBits.bitfield, 1);
 });
@@ -97,7 +103,7 @@ ava('frozen remove', (test): void => {
 	test.plan(2);
 
 	const testBits = new TestBits(3).freeze();
-	const otherBits = testBits.remove('B');
+	const otherBits = testBits.remove(TestBitFlags.B);
 
 	test.is(testBits.bitfield, 3);
 	test.is(otherBits.bitfield, 1);
@@ -113,7 +119,7 @@ ava('serialize', (test): void => {
 ava('toArray', (test): void => {
 	const testBits = new TestBits(3);
 
-	test.deepEqual(testBits.toArray(), ['A', 'B']);
+	test.deepEqual(testBits.toArray(), [TestBitFlags.A, TestBitFlags.B]);
 });
 
 ava('toJSON', (test): void => {
@@ -131,7 +137,7 @@ ava('valueOf', (test): void => {
 ava('Symbol.iterator', (test): void => {
 	const testBits = new TestBits(2);
 
-	for (const value of testBits) test.is(value, 'B');
+	for (const value of testBits) test.is(value, TestBitFlags.B);
 });
 
 ava('resolve', (test): void => {
@@ -143,15 +149,15 @@ ava('resolve number', (test): void => {
 });
 
 ava('resolve string', (test): void => {
-	test.is(TestBits.resolve<TestResolvable>('B'), 2);
+	test.is(TestBits.resolve<TestResolvable>(TestBitFlags.B), 2);
 });
 
 ava('resolve bitfield', (test): void => {
-	test.is(TestBits.resolve<TestResolvable>(new TestBits('B')), 2);
+	test.is(TestBits.resolve<TestResolvable>(new TestBits(TestBitFlags.B)), 2);
 });
 
 ava('resolve array mixed', (test): void => {
-	test.is(TestBits.resolve<TestResolvable>([1, 'B', new TestBits('C')]), 7);
+	test.is(TestBits.resolve<TestResolvable>([1, TestBitFlags.B, new TestBits(TestBitFlags.C)]), 7);
 });
 
 ava('resolve bad input', (test): void => {
