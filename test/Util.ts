@@ -109,6 +109,24 @@ ava('frozen remove', (test): void => {
 	test.is(otherBits.bitfield, 1);
 });
 
+ava('mask', (test): void => {
+	const testBits = new TestBits(3);
+
+	testBits.mask(TestBitsFlags.B);
+
+	test.is(testBits.bitfield, 2);
+});
+
+ava('frozen mask', (test): void => {
+	test.plan(2);
+
+	const testBits = new TestBits(3).freeze();
+	const otherBits = testBits.mask(TestBitsFlags.B);
+
+	test.is(testBits.bitfield, 3);
+	test.is(otherBits.bitfield, 2);
+});
+
 ava('serialize', (test): void => {
 	const testBits = new TestBits(3);
 

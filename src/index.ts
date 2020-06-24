@@ -77,6 +77,18 @@ export class BitField<T extends BitFieldResolvable> implements BitFieldObject {
 	}
 
 	/**
+	 * Returns only the bits in common between this bitfield and the passed bits.
+	 * @param bits The bit/s to mask
+	 */
+	public mask(...bits: T[]): BitField<T> {
+		let total = 0;
+		for (const bit of bits) total |= (this.constructor as typeof BitField).resolve<T>(bit);
+		if (Object.isFrozen(this)) return new (this.constructor as typeof BitField)<T>((this.bitfield & total) as T);
+		this.bitfield &= total;
+		return this;
+	}
+
+	/**
 	 * Returns an object of flags: boolean
 	 */
 	public serialize(): Record<string, boolean> {
