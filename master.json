@@ -37,7 +37,7 @@
 							},
 							"type": {
 								"type": "reference",
-								"id": 45,
+								"id": 48,
 								"name": "BitFieldResolvable"
 							}
 						}
@@ -76,7 +76,7 @@
 												"name": "T",
 												"constraint": {
 													"type": "reference",
-													"id": 45,
+													"id": 48,
 													"name": "BitFieldResolvable"
 												}
 											}
@@ -127,7 +127,7 @@
 							}
 						},
 						{
-							"id": 38,
+							"id": 41,
 							"name": "DEFAULT",
 							"kind": 1024,
 							"kindString": "Property",
@@ -142,7 +142,7 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 124,
+									"line": 136,
 									"character": 22
 								}
 							],
@@ -153,7 +153,7 @@
 							"defaultValue": "0"
 						},
 						{
-							"id": 37,
+							"id": 40,
 							"name": "FLAGS",
 							"kind": 1024,
 							"kindString": "Property",
@@ -168,7 +168,7 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 119,
+									"line": 131,
 									"character": 20
 								}
 							],
@@ -189,7 +189,7 @@
 							"defaultValue": "{} as const"
 						},
 						{
-							"id": 39,
+							"id": 42,
 							"name": "ALL",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -203,7 +203,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 40,
+									"id": 43,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -222,13 +222,13 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 129,
+									"line": 141,
 									"character": 22
 								}
 							]
 						},
 						{
-							"id": 35,
+							"id": 38,
 							"name": "[Symbol.iterator]",
 							"kind": 2048,
 							"kindString": "Method",
@@ -238,7 +238,7 @@
 							},
 							"signatures": [
 								{
-									"id": 36,
+									"id": 39,
 									"name": "[Symbol.iterator]",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -263,7 +263,7 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 112,
+									"line": 124,
 									"character": 26
 								}
 							]
@@ -309,7 +309,7 @@
 													"name": "T",
 													"constraint": {
 														"type": "reference",
-														"id": 45,
+														"id": 48,
 														"name": "BitFieldResolvable"
 													}
 												}
@@ -325,7 +325,7 @@
 												"name": "T",
 												"constraint": {
 													"type": "reference",
-													"id": 45,
+													"id": 48,
 													"name": "BitFieldResolvable"
 												}
 											}
@@ -380,7 +380,7 @@
 												"name": "T",
 												"constraint": {
 													"type": "reference",
-													"id": 45,
+													"id": 48,
 													"name": "BitFieldResolvable"
 												}
 											}
@@ -473,7 +473,7 @@
 												"name": "T",
 												"constraint": {
 													"type": "reference",
-													"id": 45,
+													"id": 48,
 													"name": "BitFieldResolvable"
 												}
 											}
@@ -490,6 +490,80 @@
 									"fileName": "src/index.ts",
 									"line": 35,
 									"character": 11
+								}
+							]
+						},
+						{
+							"id": 27,
+							"name": "mask",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 28,
+									"name": "mask",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Returns only the bits in common between this bitfield and the passed bits."
+									},
+									"parameters": [
+										{
+											"id": 29,
+											"name": "bits",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true,
+												"isRest": true
+											},
+											"comment": {
+												"text": "The bit/s to mask\n"
+											},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "typeParameter",
+													"name": "T",
+													"constraint": {
+														"type": "reference",
+														"id": 48,
+														"name": "BitFieldResolvable"
+													}
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 4,
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "T",
+												"constraint": {
+													"type": "reference",
+													"id": 48,
+													"name": "BitFieldResolvable"
+												}
+											}
+										],
+										"name": "BitField"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/index.ts",
+									"line": 83,
+									"character": 12
 								}
 							]
 						},
@@ -531,7 +605,7 @@
 												"name": "T",
 												"constraint": {
 													"type": "reference",
-													"id": 45,
+													"id": 48,
 													"name": "BitFieldResolvable"
 												}
 											}
@@ -595,7 +669,7 @@
 													"name": "T",
 													"constraint": {
 														"type": "reference",
-														"id": 45,
+														"id": 48,
 														"name": "BitFieldResolvable"
 													}
 												}
@@ -611,7 +685,7 @@
 												"name": "T",
 												"constraint": {
 													"type": "reference",
-													"id": 45,
+													"id": 48,
 													"name": "BitFieldResolvable"
 												}
 											}
@@ -629,7 +703,7 @@
 							]
 						},
 						{
-							"id": 27,
+							"id": 30,
 							"name": "serialize",
 							"kind": 2048,
 							"kindString": "Method",
@@ -639,7 +713,7 @@
 							},
 							"signatures": [
 								{
-									"id": 28,
+									"id": 31,
 									"name": "serialize",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -668,13 +742,13 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 82,
+									"line": 94,
 									"character": 17
 								}
 							]
 						},
 						{
-							"id": 29,
+							"id": 32,
 							"name": "toArray",
 							"kind": 2048,
 							"kindString": "Method",
@@ -684,7 +758,7 @@
 							},
 							"signatures": [
 								{
-									"id": 30,
+									"id": 33,
 									"name": "toArray",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -706,13 +780,13 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 91,
+									"line": 103,
 									"character": 15
 								}
 							]
 						},
 						{
-							"id": 31,
+							"id": 34,
 							"name": "toJSON",
 							"kind": 2048,
 							"kindString": "Method",
@@ -722,7 +796,7 @@
 							},
 							"signatures": [
 								{
-									"id": 32,
+									"id": 35,
 									"name": "toJSON",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -741,13 +815,13 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 98,
+									"line": 110,
 									"character": 14
 								}
 							]
 						},
 						{
-							"id": 33,
+							"id": 36,
 							"name": "valueOf",
 							"kind": 2048,
 							"kindString": "Method",
@@ -757,7 +831,7 @@
 							},
 							"signatures": [
 								{
-									"id": 34,
+									"id": 37,
 									"name": "valueOf",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -776,13 +850,13 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 105,
+									"line": 117,
 									"character": 15
 								}
 							]
 						},
 						{
-							"id": 41,
+							"id": 44,
 							"name": "resolve",
 							"kind": 2048,
 							"kindString": "Method",
@@ -793,7 +867,7 @@
 							},
 							"signatures": [
 								{
-									"id": 42,
+									"id": 45,
 									"name": "resolve",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -805,7 +879,7 @@
 									},
 									"typeParameter": [
 										{
-											"id": 43,
+											"id": 46,
 											"name": "T",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -814,14 +888,14 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 45,
+												"id": 48,
 												"name": "BitFieldResolvable"
 											}
 										}
 									],
 									"parameters": [
 										{
-											"id": 44,
+											"id": 47,
 											"name": "bit",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -837,7 +911,7 @@
 												"name": "T",
 												"constraint": {
 													"type": "reference",
-													"id": 45,
+													"id": 48,
 													"name": "BitFieldResolvable"
 												}
 											}
@@ -852,7 +926,7 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 137,
+									"line": 149,
 									"character": 22
 								}
 							]
@@ -871,33 +945,34 @@
 							"kind": 1024,
 							"children": [
 								6,
-								38,
-								37
+								41,
+								40
 							]
 						},
 						{
 							"title": "Accessors",
 							"kind": 262144,
 							"children": [
-								39
+								42
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								35,
+								38,
 								21,
 								10,
 								19,
 								13,
+								27,
 								16,
 								24,
-								27,
-								29,
-								31,
-								33,
-								41
+								30,
+								32,
+								34,
+								36,
+								44
 							]
 						}
 					],
@@ -911,7 +986,7 @@
 					"extendedBy": [
 						{
 							"type": "reference",
-							"id": 51,
+							"id": 54,
 							"name": "TestBits"
 						}
 					],
@@ -977,13 +1052,13 @@
 						},
 						{
 							"type": "reference",
-							"id": 51,
+							"id": 54,
 							"name": "TestBits"
 						}
 					]
 				},
 				{
-					"id": 45,
+					"id": 48,
 					"name": "BitFieldResolvable",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -1057,7 +1132,7 @@
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						45
+						48
 					]
 				}
 			],
@@ -1070,7 +1145,7 @@
 			]
 		},
 		{
-			"id": 46,
+			"id": 49,
 			"name": "\"test/Util\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -1080,14 +1155,14 @@
 			"originalName": "/home/runner/work/bitfield/bitfield/test/Util.ts",
 			"children": [
 				{
-					"id": 47,
+					"id": 50,
 					"name": "TestBitsFlags",
 					"kind": 4,
 					"kindString": "Enumeration",
 					"flags": {},
 					"children": [
 						{
-							"id": 48,
+							"id": 51,
 							"name": "A",
 							"kind": 16,
 							"kindString": "Enumeration member",
@@ -1102,7 +1177,7 @@
 							"defaultValue": "\"A\""
 						},
 						{
-							"id": 49,
+							"id": 52,
 							"name": "B",
 							"kind": 16,
 							"kindString": "Enumeration member",
@@ -1117,7 +1192,7 @@
 							"defaultValue": "\"B\""
 						},
 						{
-							"id": 50,
+							"id": 53,
 							"name": "C",
 							"kind": 16,
 							"kindString": "Enumeration member",
@@ -1137,9 +1212,9 @@
 							"title": "Enumeration members",
 							"kind": 16,
 							"children": [
-								48,
-								49,
-								50
+								51,
+								52,
+								53
 							]
 						}
 					],
@@ -1152,14 +1227,14 @@
 					]
 				},
 				{
-					"id": 51,
+					"id": 54,
 					"name": "TestBits",
 					"kind": 128,
 					"kindString": "Class",
 					"flags": {},
 					"children": [
 						{
-							"id": 58,
+							"id": 61,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -1168,14 +1243,14 @@
 							},
 							"signatures": [
 								{
-									"id": 59,
+									"id": 62,
 									"name": "new TestBits",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 60,
+											"id": 63,
 											"name": "bits",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1184,14 +1259,14 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 95,
+												"id": 101,
 												"name": "TestResolvable"
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
-										"id": 51,
+										"id": 54,
 										"name": "TestBits"
 									},
 									"inheritedFrom": {
@@ -1215,7 +1290,7 @@
 							}
 						},
 						{
-							"id": 57,
+							"id": 60,
 							"name": "bitfield",
 							"kind": 1024,
 							"kindString": "Property",
@@ -1248,7 +1323,7 @@
 							}
 						},
 						{
-							"id": 88,
+							"id": 94,
 							"name": "DEFAULT",
 							"kind": 1024,
 							"kindString": "Property",
@@ -1262,7 +1337,7 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 124,
+									"line": 136,
 									"character": 22
 								}
 							],
@@ -1273,12 +1348,12 @@
 							"defaultValue": "0",
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 38,
+								"id": 41,
 								"name": "BitField.DEFAULT"
 							}
 						},
 						{
-							"id": 52,
+							"id": 55,
 							"name": "FLAGS",
 							"kind": 1024,
 							"kindString": "Property",
@@ -1295,14 +1370,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 53,
+									"id": 56,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 54,
+											"id": 57,
 											"name": "[TestBitsFlags.A]",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1321,7 +1396,7 @@
 											"defaultValue": "1 << 0"
 										},
 										{
-											"id": 55,
+											"id": 58,
 											"name": "[TestBitsFlags.B]",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1340,7 +1415,7 @@
 											"defaultValue": "1 << 1"
 										},
 										{
-											"id": 56,
+											"id": 59,
 											"name": "[TestBitsFlags.C]",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1364,9 +1439,9 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												54,
-												55,
-												56
+												57,
+												58,
+												59
 											]
 										}
 									]
@@ -1375,12 +1450,12 @@
 							"defaultValue": "{\n\t\t[TestBitsFlags.A]: 1 << 0,\n\t\t[TestBitsFlags.B]: 1 << 1,\n\t\t[TestBitsFlags.C]: 1 << 2\n\t} as const",
 							"overwrites": {
 								"type": "reference",
-								"id": 37,
+								"id": 40,
 								"name": "BitField.FLAGS"
 							}
 						},
 						{
-							"id": 89,
+							"id": 95,
 							"name": "ALL",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -1393,7 +1468,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 90,
+									"id": 96,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -1407,7 +1482,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 39,
+										"id": 42,
 										"name": "BitField.ALL"
 									}
 								}
@@ -1415,18 +1490,18 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 129,
+									"line": 141,
 									"character": 22
 								}
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 39,
+								"id": 42,
 								"name": "BitField.ALL"
 							}
 						},
 						{
-							"id": 86,
+							"id": 92,
 							"name": "[Symbol.iterator]",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1435,7 +1510,7 @@
 							},
 							"signatures": [
 								{
-									"id": 87,
+									"id": 93,
 									"name": "[Symbol.iterator]",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1455,7 +1530,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 35,
+										"id": 38,
 										"name": "BitField.[Symbol.iterator]"
 									}
 								}
@@ -1463,18 +1538,18 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 112,
+									"line": 124,
 									"character": 26
 								}
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 35,
+								"id": 38,
 								"name": "BitField.[Symbol.iterator]"
 							}
 						},
 						{
-							"id": 72,
+							"id": 75,
 							"name": "add",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1483,7 +1558,7 @@
 							},
 							"signatures": [
 								{
-									"id": 73,
+									"id": 76,
 									"name": "add",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1493,7 +1568,7 @@
 									},
 									"parameters": [
 										{
-											"id": 74,
+											"id": 77,
 											"name": "bits",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1507,7 +1582,7 @@
 												"type": "array",
 												"elementType": {
 													"type": "reference",
-													"id": 95,
+													"id": 101,
 													"name": "TestResolvable"
 												}
 											}
@@ -1519,7 +1594,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 95,
+												"id": 101,
 												"name": "TestResolvable"
 											}
 										],
@@ -1546,7 +1621,7 @@
 							}
 						},
 						{
-							"id": 61,
+							"id": 64,
 							"name": "equals",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1555,7 +1630,7 @@
 							},
 							"signatures": [
 								{
-									"id": 62,
+									"id": 65,
 									"name": "equals",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1565,7 +1640,7 @@
 									},
 									"parameters": [
 										{
-											"id": 63,
+											"id": 66,
 											"name": "bit",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1575,7 +1650,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 95,
+												"id": 101,
 												"name": "TestResolvable"
 											}
 										}
@@ -1605,7 +1680,7 @@
 							}
 						},
 						{
-							"id": 70,
+							"id": 73,
 							"name": "freeze",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1614,7 +1689,7 @@
 							},
 							"signatures": [
 								{
-									"id": 71,
+									"id": 74,
 									"name": "freeze",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1647,7 +1722,7 @@
 							}
 						},
 						{
-							"id": 64,
+							"id": 67,
 							"name": "has",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1656,7 +1731,7 @@
 							},
 							"signatures": [
 								{
-									"id": 65,
+									"id": 68,
 									"name": "has",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1666,7 +1741,7 @@
 									},
 									"parameters": [
 										{
-											"id": 66,
+											"id": 69,
 											"name": "bit",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1676,7 +1751,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 95,
+												"id": 101,
 												"name": "TestResolvable"
 											}
 										}
@@ -1706,7 +1781,79 @@
 							}
 						},
 						{
-							"id": 67,
+							"id": 81,
+							"name": "mask",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 82,
+									"name": "mask",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Returns only the bits in common between this bitfield and the passed bits."
+									},
+									"parameters": [
+										{
+											"id": 83,
+											"name": "bits",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isRest": true
+											},
+											"comment": {
+												"text": "The bit/s to mask\n"
+											},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 101,
+													"name": "TestResolvable"
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 4,
+										"typeArguments": [
+											{
+												"type": "reference",
+												"id": 101,
+												"name": "TestResolvable"
+											}
+										],
+										"name": "BitField"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 27,
+										"name": "BitField.mask"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/index.ts",
+									"line": 83,
+									"character": 12
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 27,
+								"name": "BitField.mask"
+							}
+						},
+						{
+							"id": 70,
 							"name": "missing",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1715,7 +1862,7 @@
 							},
 							"signatures": [
 								{
-									"id": 68,
+									"id": 71,
 									"name": "missing",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1725,7 +1872,7 @@
 									},
 									"parameters": [
 										{
-											"id": 69,
+											"id": 72,
 											"name": "bits",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1735,7 +1882,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 95,
+												"id": 101,
 												"name": "TestResolvable"
 											}
 										}
@@ -1768,7 +1915,7 @@
 							}
 						},
 						{
-							"id": 75,
+							"id": 78,
 							"name": "remove",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1777,7 +1924,7 @@
 							},
 							"signatures": [
 								{
-									"id": 76,
+									"id": 79,
 									"name": "remove",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1787,7 +1934,7 @@
 									},
 									"parameters": [
 										{
-											"id": 77,
+											"id": 80,
 											"name": "bits",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1801,7 +1948,7 @@
 												"type": "array",
 												"elementType": {
 													"type": "reference",
-													"id": 95,
+													"id": 101,
 													"name": "TestResolvable"
 												}
 											}
@@ -1813,7 +1960,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 95,
+												"id": 101,
 												"name": "TestResolvable"
 											}
 										],
@@ -1840,7 +1987,7 @@
 							}
 						},
 						{
-							"id": 78,
+							"id": 84,
 							"name": "serialize",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1849,7 +1996,7 @@
 							},
 							"signatures": [
 								{
-									"id": 79,
+									"id": 85,
 									"name": "serialize",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1873,7 +2020,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 27,
+										"id": 30,
 										"name": "BitField.serialize"
 									}
 								}
@@ -1881,18 +2028,18 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 82,
+									"line": 94,
 									"character": 17
 								}
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 27,
+								"id": 30,
 								"name": "BitField.serialize"
 							}
 						},
 						{
-							"id": 80,
+							"id": 86,
 							"name": "toArray",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1901,7 +2048,7 @@
 							},
 							"signatures": [
 								{
-									"id": 81,
+									"id": 87,
 									"name": "toArray",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1918,7 +2065,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 29,
+										"id": 32,
 										"name": "BitField.toArray"
 									}
 								}
@@ -1926,18 +2073,18 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 91,
+									"line": 103,
 									"character": 15
 								}
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 29,
+								"id": 32,
 								"name": "BitField.toArray"
 							}
 						},
 						{
-							"id": 82,
+							"id": 88,
 							"name": "toJSON",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1946,7 +2093,7 @@
 							},
 							"signatures": [
 								{
-									"id": 83,
+									"id": 89,
 									"name": "toJSON",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1960,7 +2107,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 31,
+										"id": 34,
 										"name": "BitField.toJSON"
 									}
 								}
@@ -1968,18 +2115,18 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 98,
+									"line": 110,
 									"character": 14
 								}
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 31,
+								"id": 34,
 								"name": "BitField.toJSON"
 							}
 						},
 						{
-							"id": 84,
+							"id": 90,
 							"name": "valueOf",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1988,7 +2135,7 @@
 							},
 							"signatures": [
 								{
-									"id": 85,
+									"id": 91,
 									"name": "valueOf",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2002,7 +2149,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 33,
+										"id": 36,
 										"name": "BitField.valueOf"
 									}
 								}
@@ -2010,18 +2157,18 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 105,
+									"line": 117,
 									"character": 15
 								}
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 33,
+								"id": 36,
 								"name": "BitField.valueOf"
 							}
 						},
 						{
-							"id": 91,
+							"id": 97,
 							"name": "resolve",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2031,7 +2178,7 @@
 							},
 							"signatures": [
 								{
-									"id": 92,
+									"id": 98,
 									"name": "resolve",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2041,21 +2188,21 @@
 									},
 									"typeParameter": [
 										{
-											"id": 93,
+											"id": 99,
 											"name": "T",
 											"kind": 131072,
 											"kindString": "Type parameter",
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 45,
+												"id": 48,
 												"name": "BitFieldResolvable"
 											}
 										}
 									],
 									"parameters": [
 										{
-											"id": 94,
+											"id": 100,
 											"name": "bit",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2070,7 +2217,7 @@
 												"name": "T",
 												"constraint": {
 													"type": "reference",
-													"id": 45,
+													"id": 48,
 													"name": "BitFieldResolvable"
 												}
 											}
@@ -2082,7 +2229,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 41,
+										"id": 44,
 										"name": "BitField.resolve"
 									}
 								}
@@ -2090,13 +2237,13 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 137,
+									"line": 149,
 									"character": 22
 								}
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 41,
+								"id": 44,
 								"name": "BitField.resolve"
 							}
 						}
@@ -2106,41 +2253,42 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								58
+								61
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								57,
-								88,
-								52
+								60,
+								94,
+								55
 							]
 						},
 						{
 							"title": "Accessors",
 							"kind": 262144,
 							"children": [
-								89
+								95
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								86,
-								72,
-								61,
-								70,
-								64,
-								67,
+								92,
 								75,
+								64,
+								73,
+								67,
+								81,
+								70,
 								78,
-								80,
-								82,
 								84,
-								91
+								86,
+								88,
+								90,
+								97
 							]
 						}
 					],
@@ -2158,7 +2306,7 @@
 							"typeArguments": [
 								{
 									"type": "reference",
-									"id": 95,
+									"id": 101,
 									"name": "TestResolvable"
 								}
 							],
@@ -2174,7 +2322,7 @@
 					]
 				},
 				{
-					"id": 95,
+					"id": 101,
 					"name": "TestResolvable",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -2191,7 +2339,7 @@
 						"types": [
 							{
 								"type": "reference",
-								"id": 47,
+								"id": 50,
 								"name": "TestBitsFlags"
 							},
 							{
@@ -2219,17 +2367,17 @@
 										},
 										{
 											"type": "reference",
-											"id": 48,
+											"id": 51,
 											"name": "A"
 										},
 										{
 											"type": "reference",
-											"id": 49,
+											"id": 52,
 											"name": "B"
 										},
 										{
 											"type": "reference",
-											"id": 50,
+											"id": 53,
 											"name": "C"
 										}
 									]
@@ -2244,21 +2392,21 @@
 					"title": "Enumerations",
 					"kind": 4,
 					"children": [
-						47
+						50
 					]
 				},
 				{
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						51
+						54
 					]
 				},
 				{
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						95
+						101
 					]
 				}
 			],
@@ -2277,7 +2425,7 @@
 			"kind": 1,
 			"children": [
 				1,
-				46
+				49
 			]
 		}
 	]
