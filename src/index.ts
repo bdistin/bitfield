@@ -57,8 +57,7 @@ export class BitField<T extends BitFieldResolvable> implements BitFieldObject {
 	 * @param bits The bit/s to add
 	 */
 	public add(...bits: T[]): BitField<T> {
-		let total = 0;
-		for (const bit of bits) total |= (this.constructor as typeof BitField).resolve<T>(bit);
+		const total = bits.reduce((acc, bit) => acc | (this.constructor as typeof BitField).resolve<T>(bit), 0);
 		if (Object.isFrozen(this)) return new (this.constructor as typeof BitField)<T>((this.bitfield | total) as T);
 		this.bitfield |= total;
 		return this;
@@ -69,8 +68,7 @@ export class BitField<T extends BitFieldResolvable> implements BitFieldObject {
 	 * @param bits The bit/s to remove
 	 */
 	public remove(...bits: T[]): BitField<T> {
-		let total = 0;
-		for (const bit of bits) total |= (this.constructor as typeof BitField).resolve<T>(bit);
+		const total = bits.reduce((acc, bit) => acc | (this.constructor as typeof BitField).resolve<T>(bit), 0);
 		if (Object.isFrozen(this)) return new (this.constructor as typeof BitField)<T>((this.bitfield & ~total) as T);
 		this.bitfield &= ~total;
 		return this;
@@ -81,8 +79,7 @@ export class BitField<T extends BitFieldResolvable> implements BitFieldObject {
 	 * @param bits The bit/s to mask
 	 */
 	public mask(...bits: T[]): BitField<T> {
-		let total = 0;
-		for (const bit of bits) total |= (this.constructor as typeof BitField).resolve<T>(bit);
+		const total = bits.reduce((acc, bit) => acc | (this.constructor as typeof BitField).resolve<T>(bit), 0);
 		if (Object.isFrozen(this)) return new (this.constructor as typeof BitField)<T>((this.bitfield & total) as T);
 		this.bitfield &= total;
 		return this;
