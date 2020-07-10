@@ -130,7 +130,7 @@ export class BitField<T extends BitFieldResolvable<string>> implements BitFieldO
 	/**
 	 * The default flags for the bitfield
 	 */
-	public static DEFAULT = 0;
+	public static DEFAULT = 0n;
 
 	/**
 	 * The value of all bits in this bitfield
