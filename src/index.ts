@@ -1,20 +1,20 @@
 export interface BitFieldObject {
-	bitfield: number;
+	bitfield: bigint;
 }
 
-export type BitFieldResolvable = string | number | BitFieldObject | (string | number | BitFieldObject)[];
+export type BitFieldResolvable<V extends string> = V | number | bigint | BitFieldObject | (V | number | bigint | BitFieldObject)[];
 
 /* eslint-disable no-bitwise */
 
 /**
  * The base class for handling BitField data
  */
-export class BitField<T extends BitFieldResolvable> implements BitFieldObject {
+export class BitField<T extends BitFieldResolvable<string>> implements BitFieldObject {
 
 	/**
 	 * The bitfield data
 	 */
-	public bitfield: number;
+	public bitfield: bigint;
 
 	public constructor(bits?: T) {
 		this.bitfield = (this.constructor as typeof BitField).resolve<T>(bits);
@@ -57,7 +57,7 @@ export class BitField<T extends BitFieldResolvable> implements BitFieldObject {
 	 * @param bits The bit/s to add
 	 */
 	public add(...bits: T[]): BitField<T> {
-		const total = bits.reduce((acc, bit) => acc | (this.constructor as typeof BitField).resolve<T>(bit), 0);
+		const total = bits.reduce((acc, bit) => acc | (this.constructor as typeof BitField).resolve<T>(bit), 0n);
 		if (Object.isFrozen(this)) return new (this.constructor as typeof BitField)<T>((this.bitfield | total) as T);
 		this.bitfield |= total;
 		return this;
@@ -68,7 +68,7 @@ export class BitField<T extends BitFieldResolvable> implements BitFieldObject {
 	 * @param bits The bit/s to remove
 	 */
 	public remove(...bits: T[]): BitField<T> {
-		const total = bits.reduce((acc, bit) => acc | (this.constructor as typeof BitField).resolve<T>(bit), 0);
+		const total = bits.reduce((acc, bit) => acc | (this.constructor as typeof BitField).resolve<T>(bit), 0n);
 		if (Object.isFrozen(this)) return new (this.constructor as typeof BitField)<T>((this.bitfield & ~total) as T);
 		this.bitfield &= ~total;
 		return this;
@@ -79,7 +79,7 @@ export class BitField<T extends BitFieldResolvable> implements BitFieldObject {
 	 * @param bits The bit/s to mask
 	 */
 	public mask(...bits: T[]): BitField<T> {
-		const total = bits.reduce((acc, bit) => acc | (this.constructor as typeof BitField).resolve<T>(bit), 0);
+		const total = bits.reduce((acc, bit) => acc | (this.constructor as typeof BitField).resolve<T>(bit), 0n);
 		if (Object.isFrozen(this)) return new (this.constructor as typeof BitField)<T>((this.bitfield & total) as T);
 		this.bitfield &= total;
 		return this;
@@ -104,14 +104,14 @@ export class BitField<T extends BitFieldResolvable> implements BitFieldObject {
 	/**
 	 * Defines what this Bitfield is when converted to JSON
 	 */
-	public toJSON(): number {
-		return this.bitfield;
+	public toJSON(): string {
+		return this.bitfield.toString();
 	}
 
 	/**
 	 * Defines value behavior of this BitField
 	 */
-	public valueOf(): number {
+	public valueOf(): bigint {
 		return this.bitfield;
 	}
 
@@ -125,7 +125,7 @@ export class BitField<T extends BitFieldResolvable> implements BitFieldObject {
 	/**
 	 * Flags for this BitField (Should be implemented in child classes)
 	 */
-	public static FLAGS: Record<string, number> = {} as const;
+	public static FLAGS: Record<string, bigint> = {} as const;
 
 	/**
 	 * The default flags for the bitfield
@@ -135,19 +135,20 @@ export class BitField<T extends BitFieldResolvable> implements BitFieldObject {
 	/**
 	 * The value of all bits in this bitfield
 	 */
-	public static get ALL(): number {
-		return Object.values<number>(this.FLAGS).reduce((all, byte) => all | byte, 0);
+	public static get ALL(): bigint {
+		return Object.values<bigint>(this.FLAGS).reduce((all, byte) => all | byte, 0n);
 	}
 
 	/**
 	 * Resolves a BitFieldResolvable into a number
 	 * @param bit The bit/s to resolve
 	 */
-	public static resolve<T extends BitFieldResolvable>(bit?: T): number {
-		if (typeof bit === 'undefined') return 0;
-		if (typeof bit === 'number' && bit >= 0) return bit;
+	public static resolve<T extends BitFieldResolvable<string>>(bit?: T): bigint {
+		if (typeof bit === 'undefined') return 0n;
+		// eslint-disable-next-line no-undef
+		if (typeof bit === 'number' && bit >= 0) return BigInt(bit);
 		if (bit instanceof BitField) return bit.bitfield;
-		if (Array.isArray(bit)) return (bit as (string | number | BitFieldObject)[]).map((byte) => this.resolve(byte)).reduce((bytes, byte) => bytes | byte, 0);
+		if (Array.isArray(bit)) return (bit as (string | number | BitFieldObject)[]).map((byte) => this.resolve(byte)).reduce((bytes, byte) => bytes | byte, 0n);
 		if (typeof bit === 'string') return this.FLAGS[bit];
 		throw new RangeError(`An invalid bit was provided. Received: ${typeof bit}`);
 	}
