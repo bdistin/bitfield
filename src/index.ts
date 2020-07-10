@@ -147,6 +147,7 @@ export class BitField<T extends BitFieldResolvable<string>> implements BitFieldO
 		if (typeof bit === 'undefined') return 0n;
 		// eslint-disable-next-line no-undef
 		if (typeof bit === 'number' && bit >= 0) return BigInt(bit);
+		if (typeof bit === 'bigint' && bit >= 0n) return bit;
 		if (bit instanceof BitField) return bit.bitfield;
 		if (Array.isArray(bit)) return (bit as (string | number | BitFieldObject)[]).map((byte) => this.resolve(byte)).reduce((bytes, byte) => bytes | byte, 0n);
 		if (typeof bit === 'string') return this.FLAGS[bit];
